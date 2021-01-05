@@ -1,3 +1,8 @@
+### [GitHub Pages](https://vadim2107.github.io/RA_Event-State_layouts/)
+# Домашнее задание к курсу «React: библиотека № 1 в современной фронтенд-разработке»
+
+## RA_Event-State_layouts
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
