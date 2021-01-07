@@ -1,7 +1,7 @@
 import React from 'react';
 import IconSwitch from './IconSwitch.js';
-// import CardsView from './CardsView.js';
-// import ListView from './ListView.js';
+import CardsView from './CardsView.js';
+import ListView from './ListView.js';
 
 const VIEW_LIST = "view_list";
 const VIEW_MODULE = "view_module";
@@ -39,37 +39,45 @@ class Store extends React.Component {
       price: "150",
       color: "green",
       img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
-    }];
-    // this.icon = VIEW_MODULE;
+    }];    
     this.icon = VIEW_LIST;
-
     this.state = { value: this.icon };
   }
 
   onSwitch = () => {
     if (this.icon === VIEW_LIST) {
       this.icon = VIEW_MODULE;
-      this.setState(() => ({value: this.icon}));
-      // console.log(this.state.value);      
+      this.setState(() => ({value: this.icon}));      
     } else if (this.icon === VIEW_MODULE) {
       this.icon = VIEW_LIST;
       this.setState(() => ({value: this.icon}));
     }
-    console.log(this.state.value);
-    // console.log("change state here");
+    console.log(this.state.value);    
+  }
+
+  renderLayout = () =>{
+    if (this.icon === VIEW_LIST) {
+      return (
+        <CardsView
+          // layout={this.layout}
+          cards={this.products} />
+      );
+    }
+    return (<ListView items={this.products} />);
   }
 
   render() {    
     return (
       <div>
-      <IconSwitch
-        icon = {this.icon}
-        onSwitch = {this.onSwitch} />        
-      {/* <CardsView cards = {this.cards} />
-      <ListView items = {this.items} /> */}
+        <div className="toolbar">
+          <IconSwitch
+            icon = {this.icon}
+            onSwitch = {this.onSwitch} />
+        </div>
+        {this.renderLayout()}      
       </div>
     );
-  }
+  }  
 }
 
 export default Store;
