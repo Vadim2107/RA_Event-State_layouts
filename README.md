@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/m1gk5cmrcw8xarpy?svg=true)](https://ci.appveyor.com/project/Vadim2107/ra-event-state-layouts)
+
 ### [GitHub Pages](https://vadim2107.github.io/RA_Event-State_layouts/)
 # Домашнее задание к курсу «React: библиотека № 1 в современной фронтенд-разработке»
 
